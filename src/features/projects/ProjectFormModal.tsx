@@ -1,4 +1,4 @@
-import { useState, type FormEvent, useEffect } from "react";
+import { useState, type FormEvent } from "react";
 import { Modal } from "../../components/ui/Modal";
 import { Input } from "../../components/ui/Input";
 import { Button } from "../../components/ui/Button";
@@ -19,23 +19,13 @@ export default function ProjectFormModal({
   onSubmit,
   initialData,
 }: ProjectFormModalProps) {
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [status, setStatus] = useState<"ACTIVE" | "COMPLETED" | "On Hold">(
-    "ACTIVE",
+  const [name, setName] = useState(initialData?.name || "");
+  const [description, setDescription] = useState(
+    initialData?.description || "",
   );
-
-  useEffect(() => {
-    if (initialData) {
-      setName(initialData.name);
-      setDescription(initialData.description);
-      setStatus(initialData.status);
-    } else {
-      setName("");
-      setDescription("");
-      setStatus("ACTIVE");
-    }
-  }, [initialData, isOpen]);
+  const [status, setStatus] = useState<"ACTIVE" | "COMPLETED" | "On Hold">(
+    initialData?.status || "ACTIVE",
+  );
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -75,7 +65,9 @@ export default function ProjectFormModal({
           <select
             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm px-3 py-2 border"
             value={status}
-            onChange={(e) => setStatus(e.target.value as any)}>
+            onChange={(e) =>
+              setStatus(e.target.value as "ACTIVE" | "On Hold" | "COMPLETED")
+            }>
             <option value="ACTIVE">Active</option>
             <option value="On Hold">On Hold</option>
             <option value="COMPLETED">Completed</option>

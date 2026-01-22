@@ -1,4 +1,4 @@
-import { useState, useEffect, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Button } from "../../components/ui/Button";
 import { Input } from "../../components/ui/Input";
@@ -12,12 +12,6 @@ export default function RegisterPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!token) {
-      setError("Invalid or missing invitation token.");
-    }
-  }, [token]);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();

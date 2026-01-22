@@ -132,6 +132,7 @@ export default function ProjectsList() {
       />
 
       <ProjectFormModal
+        key={editingProject?.id || (isModalOpen ? "new" : "closed")}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         onSubmit={editingProject ? handleUpdate : handleCreate}

@@ -3,7 +3,24 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#7C3AED", // Violet 600 - Matching the vibrant purple
+        "background-light": "#ffffff",
+        "background-dark": "#0f172a", // Slate 900
+        "surface-light": "#f8fafc",
+        "surface-dark": "#1e293b",
+      },
+      fontFamily: {
+        display: ["Inter", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
+      },
+      borderRadius: {
+        xl: "0.75rem",
+        "2xl": "1rem",
+        "3xl": "1.5rem",
+      },
+    },
   },
   plugins: [],
 };

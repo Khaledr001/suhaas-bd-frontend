@@ -18,6 +18,10 @@
         animation: spin 1s linear infinite;
     }
 
+    .illustration-bg {
+        background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+    }
+
     @keyframes spin {
         from {
             transform: rotate(0deg);

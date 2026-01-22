@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Secure Login Portal</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#7C3AED", // Violet 600 - Matching the vibrant purple
+              "background-light": "#ffffff",
+              "background-dark": "#0f172a", // Slate 900
+              "surface-light": "#f8fafc",
+              "surface-dark": "#1e293b",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              xl: "0.75rem",
+              "2xl": "1rem",
+              "3xl": "1.5rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .illustration-bg {
+        background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+      }
+      body::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-50 text-slate-900 font-sans antialiased dark:bg-black dark:text-white transition-colors duration-300">
+    <div
+      class="min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
+      <div
+        class="w-full max-w-6xl bg-background-light dark:bg-background-dark rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[700px]">
+        <div
+          class="w-full md:w-1/2 p-8 sm:p-12 lg:p-16 flex flex-col justify-center relative">
+          <div
+            class="absolute top-8 left-8 sm:left-12 lg:left-16 flex items-center gap-2">
+            <div class="w-6 h-6 bg-primary rounded-md shadow-sm"></div>
+            <span
+              class="font-bold text-lg tracking-wide text-gray-900 dark:text-white"
+              >Finnger</span
+            >
+          </div>
+          <div class="mt-12 md:mt-0 mb-8">
+            <h1
+              class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3">
+              Holla, <br />
+              Welcome Back
+            </h1>
+            <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base">
+              Hey, welcome back to your special place
+            </p>
+          </div>
+          <form action="#" class="space-y-6">
+            <div class="space-y-2">
+              <label class="sr-only" for="email">Email address</label>
+              <input
+                autocomplete="email"
+                class="block w-full rounded-xl border-gray-200 bg-white px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 dark:bg-surface-dark dark:border-gray-700 dark:text-white dark:ring-gray-700 dark:placeholder:text-gray-500"
+                id="email"
+                name="email"
+                placeholder="stanley@gmail.com"
+                required=""
+                type="email"
+                value="stanley@gmail.com" />
+            </div>
+            <div class="space-y-2">
+              <label class="sr-only" for="password">Password</label>
+              <input
+                autocomplete="current-password"
+                class="block w-full rounded-xl border-gray-200 bg-white px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 dark:bg-surface-dark dark:border-gray-700 dark:text-white dark:ring-gray-700 dark:placeholder:text-gray-500"
+                id="password"
+                name="password"
+                placeholder="••••••••••••••••"
+                required=""
+                type="password"
+                value="Password123" />
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <input
+                  checked=""
+                  class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700"
+                  id="remember-me"
+                  name="remember-me"
+                  type="checkbox" />
+                <label
+                  class="ml-2 block text-sm text-gray-600 dark:text-gray-400"
+                  for="remember-me">
+                  Remember me
+                </label>
+              </div>
+              <div class="text-sm">
+                <a
+                  class="font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors"
+                  href="#">
+                  Forgot Password?
+                </a>
+              </div>
+            </div>
+            <div>
+              <button
+                class="flex w-full justify-center rounded-xl bg-primary px-3 py-3.5 text-sm font-bold leading-6 text-white shadow-lg hover:bg-violet-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all transform hover:scale-[1.01]"
+                type="submit">
+                Sign In
+              </button>
+            </div>
+          </form>
+          <p class="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
+            Don't have an account?
+            <a
+              class="font-semibold leading-6 text-primary hover:text-violet-500 dark:hover:text-violet-400 transition-colors"
+              href="#">
+              Sign Up
+            </a>
+          </p>
+        </div>
+        <div
+          class="hidden md:flex md:w-1/2 illustration-bg relative items-center justify-center p-8 overflow-hidden">
+          <div
+            class="absolute top-10 left-10 w-24 h-12 bg-white/20 rounded-full blur-xl animate-pulse"></div>
+          <div
+            class="absolute bottom-20 right-10 w-32 h-16 bg-white/10 rounded-full blur-2xl"></div>
+          <div
+            class="relative z-10 max-w-md w-full transform transition-transform hover:scale-105 duration-500">
+            <img
+              alt="3D illustration of a secure mobile phone with biometric fingerprint scanning concepts in a purple environment"
+              class="w-full h-auto object-contain drop-shadow-2xl rounded-2xl mix-blend-normal opacity-90"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT0A1cEly_J_c9t9nf_GoWvXpqm9C9mIhcruBVjbvwQdjAai2c2Uctdilxpa_Qq7s2IS6wxOYq2q43rGQWP7DWwCqZiA06yt6hgiJQSjQMEVgMBFOXQaTNuNgKQRgPd_tFFbg2JHlGfME8uA0e4SzJA8bk0--VpVf8NX9-O5hWhiwhDLKM5HrCYwFGt4NYVSt-qJrOcFLL-P16HNtfejz6URoiL8Zd80n5DgZ3dmEAVQxKwwY2DaPIVMmNH6DAeTar1yvgzApASg86" />
+            <div
+              class="absolute -top-6 -left-6 bg-white dark:bg-surface-dark p-3 rounded-2xl shadow-xl animate-bounce"
+              style="animation-duration: 3s">
+              <span class="material-icons-round text-primary text-3xl"
+                >check_circle</span
+              >
+            </div>
+            <div
+              class="absolute bottom-10 -right-4 bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-xl animate-bounce"
+              style="animation-duration: 4s; animation-delay: 1s">
+              <span class="material-icons-round text-primary text-4xl"
+                >lock</span
+              >
+            </div>
+          </div>
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent mix-blend-overlay pointer-events-none"></div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="fixed bottom-4 right-4 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg border border-gray-200 dark:border-gray-700 z-50 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+      onclick="document.documentElement.classList.toggle('dark')"
+      title="Toggle Dark Mode">
+      <span class="material-icons-round dark:hidden">dark_mode</span>
+      <span class="material-icons-round hidden dark:block">light_mode</span>
+    </button>
+  </body>
+</html>
